@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">Biller</string>
+
+    <!-- Auth -->
+    <string name="login_title">Login to Biller</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Create Account</string>
+    <string name="create_account_prompt">Don\'t have an account?</string>
+    <string name="create_account">Create Account</string>
+    <string name="have_account_prompt">Already have an account?</string>
+    <string name="continue_as_guest">Continue as Guest</string>
+    <string name="guest_banner">Guest mode — sign in to save your Excel files to Drive</string>
+    <string name="guest_saved">Guest mode: Excel saved to Downloads. Sign in to back it up securely to Drive.</string>
+    <string name="guest_history">Your Excel files are saved on this phone and available offline. Sign in to also back them up securely to Drive.</string>
+    <string name="password_mismatch">Passwords do not match</string>
+    <string name="invalid_email">Please enter a valid email</string>
+    <string name="password_too_short">Password must be at least 6 characters</string>
+    <string name="auth_failed">Login failed. Please check your email and password.</string>
+    <string name="signup_failed">Could not create account. Please try again.</string>
+    <string name="auth_busy">Please wait…</string>
+    <string name="email_in_use">An account with this email already exists. Please sign in.</string>
+    <string name="network_error">No internet connection. Please try again.</string>
+
+    <!-- Home / Bill form -->
+    <string name="current_excel">Current Excel</string>
+    <string name="rows_added">Bills added</string>
+    <string name="bill_number">Bill Number</string>
+    <string name="amount">Amount</string>
+    <string name="biller_name">Name of Biller</string>
+    <string name="remarks">Remarks</string>
+    <string name="bill_image">Bill Image</string>
+    <string name="pick_image">Upload bill image</string>
+    <string name="change_image">Change image</string>
+    <string name="image_selected">Image selected</string>
+    <string name="submit_bill">Submit Bill</string>
+    <string name="quit_excel">Quit Excel</string>
+    <string name="fill_required">Please enter Bill Number, Amount and Biller Name</string>
+    <string name="amount_invalid">Please enter a valid amount</string>
+    <string name="bill_added">Bill added to Excel</string>
+
+    <!-- Quit Excel -->
+    <string name="quit_title">Finish current Excel?</string>
+    <string name="quit_message">The current Excel will be saved securely to Drive, kept on this phone, and a new Excel file will be created.</string>
+    <string name="cancel">Cancel</string>
+    <string name="finish">Finish</string>
+    <string name="uploading_excel">Uploading to Drive…</string>
+    <string name="upload_success">Excel saved securely to Drive</string>
+    <string name="upload_downloaded">Excel also saved to Downloads</string>
+    <string name="upload_failed">Upload failed. Please check your internet connection.</string>
+    <string name="new_excel_started">New Excel file created: %1$s</string>
+    <string name="download_excel">Download Excel</string>
+    <string name="share_excel">Share</string>
+    <string name="save_success">Saved to Downloads</string>
+    <string name="save_failed">Could not save to Downloads</string>
+
+    <!-- History -->
+    <string name="history_title">My Excel Files</string>
+    <string name="no_history">No Excel files yet. Submit bills and press Quit Excel to create one.</string>
+    <string name="history_local">On this phone</string>
+    <string name="history_drive">Secure Drive backup (logged in)</string>
+    <string name="history_offline_note">Available offline. Every completed Excel is kept here and also stored securely on the server when you are signed in.</string>
+    <string name="back">Back</string>
+
+    <!-- Misc -->
+    <string name="logout">Logout</string>
+    <string name="language">தமிழ்</string>
+    <string name="language_hint">Switch language</string>
+    <string name="welcome_user">Welcome, %1$s</string>
+    <string name="empty_state">No bills yet. Enter your first bill below.</string>
+</resources>
