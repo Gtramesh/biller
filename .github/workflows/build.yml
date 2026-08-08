@@ -12,6 +12,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      HAS_SIGNING: ${{ secrets.BILLER_KEYSTORE_B64 != '' }}
+      HAS_GOOGLE_JSON: ${{ secrets.GOOGLE_SERVICES_JSON != '' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,13 +29,13 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Decode signing keystore
-        if: ${{ secrets.BILLER_KEYSTORE_B64 != '' }}
+        if: env.HAS_SIGNING == 'true'
         env:
           KEYSTORE_B64: ${{ secrets.BILLER_KEYSTORE_B64 }}
         run: echo "$KEYSTORE_B64" | base64 -d > invoicesaver-release.jks
 
       - name: Create key.properties
-        if: ${{ secrets.BILLER_KEYSTORE_B64 != '' }}
+        if: env.HAS_SIGNING == 'true'
         env:
           STORE_PASS: ${{ secrets.BILLER_KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.BILLER_KEY_ALIAS }}
@@ -46,7 +49,7 @@ jobs:
           EOF
 
       - name: Create google-services.json
-        if: ${{ secrets.GOOGLE_SERVICES_JSON != '' }}
+        if: env.HAS_GOOGLE_JSON == 'true'
         env:
           GS_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
         run: echo "$GS_JSON" > app/google-services.json
@@ -57,7 +60,7 @@ jobs:
           ./gradlew :app:assembleDebug --no-daemon
 
       - name: Build signed release APK
-        if: ${{ secrets.BILLER_KEYSTORE_B64 != '' }}
+        if: env.HAS_SIGNING == 'true'
         run: ./gradlew :app:assembleRelease --no-daemon
 
       - name: Upload APKs
